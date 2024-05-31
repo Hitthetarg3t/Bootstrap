@@ -1,48 +1,61 @@
-# Bootstrap
-[![GitHub stars](https://img.shields.io/github/stars/RootHide/Bootstrap?style=social)](https://github.com/RootHide/Bootstrap/stargazers)
+# roothide Bootstrap
 
+[![GitHub stars](https://img.shields.io/github/stars/roothide/Bootstrap?style=social)](https://github.com/roothide/Bootstrap/stargazers)
 
-A full featured bootstrap for ios14.0-17.0, A8-A17,M1+M2. (currently tested on ios15.0~ios17.0)
+A full featured bootstrap for iOS 15.0-17.0 A8-A17 & M1+M2 using roothide.
+
+##### *WARNING:* By using this software, you take full responsibility for what you do with it. Any unofficial modifications to your device may cause irreparable damage. Refer to the FAQ linked in the `Usage` section for safe usage of this software.
+
+roothide Bootstrap is available to download on this repositories [Releases](https://github.com/roothide/Bootstrap/releases).
 
 ## Building
 
-You'll need MacOS to build, as you require Xcode Command Line Tools. If you don't have Xcode installed, you can install the Command Line Tools by itself by running `xcode-select --install`.
+If you do not have access to MacOS, refer to the FAQ in the `Usage` section to build with GitHub Actions instead.
 
- 1. Update your theos to the this
+You'll need MacOS to build, as you require Xcode from the App Store. Simply having Xcode Command Line Tools is *insufficient*. Here's how to build the Bootstrap:
+
+ 1. Update/Install Theos with roothide support
     
-    ```bash -c "$(curl -fsSL https://raw.githubusercontent.com/roothide/theos/master/bin/install-theos)"```
-    
-    This build of Theos is consistently updated.
+    ```
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/roothide/theos/master/bin/install-theos)"
+    ```
+    *If you encounter errors from a previous Theos installation, remove Theos in its entirety before continuing.*
 
- 2. Build `Bootstrap.tipa`
+ 2. Clone the GitHub repository and enter directory
 
-    ```make package```
+    ```
+    git clone https://github.com/roothide/Bootstrap/ && cd Bootstrap
+    ```
 
- 3. Transfer `Bootstrap.tipa` from `./packages/` to your device and install it with TrollStore!
+ 3. Build `Bootstrap.tipa`
+
+    ```
+    make package
+    ```
+
+ 4. Transfer `Bootstrap.tipa` from `./packages/` to your device and install it with TrollStore
 
 ## Usage
 
-Once you open the Bootstrap app, press Bootstrap. This will install the necessary apps and files.
+The roothide Bootstrap application **must** be installed with [TrollStore](https://ios.cfw.guide/installing-trollstore/). Use version `2.0.9` or later for enabling developer mode on-device.
 
-You can add various sources to Sileo or Zebra, and install tweaks. You may need to convert tweaks to be Bootstrap compatible.
+Tweaks not compiled or converted to roothide will not work out-of-the-box with roothide Bootstrap. Refer to the FAQ below on how to use roothide Patcher.
 
-By default, tweaks are not injected into any apps. To enable tweak injection, click AppEnabler in the Bootstrap app, and toggle on an app you want to enable your tweaks in. You *cannot* inject into SpringBoard (com.apple.springboard) or Photos (com.apple.mobileslideshow) at the moment.
+By design, roothide does not inject tweaks into any applications by default. To enable tweak injection into an application, press `App List` in the Bootstrap app, and enable the toggle of the application you want to inject into. Injection into `com.apple.springboard` or daemons is not possible with the roothide Bootstrap. Refer to the FAQ below on injection into `com.apple.springboard`.
+
+**A roothide Bootstrap FAQ** is available [here](https://github.com/dleovl/Bootstrap/blob/faq/README.md).
 
 ## Develop tweaks
 
-[Document](https://github.com/RootHide/Developer)
+Both rootful and rootless tweaks aren't out-of-the-box compatible with roothide, so you'll need to develop them specifically to support it. You can refer to the developer documentation [here](https://github.com/roothide/Developer).
 
-## <a id="faq-convert" /> How to install tweaks?
+## Discord server
 
-Bootstrap can enable tweaks for almost all apps, but it does not yet support springboard tweaks, such as the homescreen, lockscreen, control center, statusbar tweaks.
+You can join the roothide Discord server for support or general discussion [here](https://discord.com/invite/scqCkumAYp).
 
-When installing a tweak, you might see a message saying 'Not Updated'. This tweak will need to be updated to support Bootstrap.
+## The "Our Table" Icon
 
-Install the Patcher in the sileo. When attempting to install a tweak, press 'Convert'. In the share sheet, press the Patcher app. When you convert a tweak to be Bootstrap compatible, you're given the option to directly convert simple tweaks or use rootless compat layer. If a tweak doesn't work with directly converting, try the rootless compat layer! You will need to install rootless-compat as a dependancy.
-
-## <a id="faq-discord" /> I have a question that isn't listed here. Where do I go for help?
-
-You can join the our Discord [here](https://discord.com/invite/scqCkumAYp).
+The ProcursusTeam logo was originally made by [@TheAlphaStream](https://github.com/TheAlphaStream), and later edited by [@sourcelocation](https://github.com/sourcelocation).
 
 ## Credits
 
@@ -93,13 +106,14 @@ Huge thanks to these people, we couldn't have completed this project without the
 - Nightwind: [https://twitter.com/NightwindDev](https://twitter.com/NightwindDev)
 - Nick Chan: [https://nickchan.lol](https://nickchan.lol)
 - nzhaonan: [https://twitter.com/nzhaonan](https://twitter.com/nzhaonan)
+- Oliver Tzeng: [https://github.com/olivertzeng](https://github.com/olivertzeng)
 - omrkujman: [https://twitter.com/omrkujman](https://twitter.com/omrkujman)
 - opa334: [http://github.com/opa334](http://github.com/opa334)
 - onejailbreak: [https://twitter.com/onejailbreak_](https://twitter.com/onejailbreak_)
 - Phuc Do: [https://twitter.com/dobabaophuc](https://twitter.com/dobabaophuc)
 - PoomSmart: [https://twitter.com/poomsmart](https://twitter.com/poomsmart)
 - ProcursusTeam: [https://procursus.social/@team](https://procursus.social/@team)
-- roothide: [http://github.com/RootHide](http://github.com/RootHide)
+- roothide: [http://github.com/roothide](http://github.com/roothide)
 - Sam Bingner: [http://github.com/sbingner](http://github.com/sbingner)
 - Shadow-: [http://iosjb.top/](http://iosjb.top/)
 - Snail: [https://twitter.com/somnusix](https://twitter.com/somnusix)
@@ -114,3 +128,4 @@ Huge thanks to these people, we couldn't have completed this project without the
 - xsf1re: [https://twitter.com/xsf1re](https://twitter.com/xsf1re)
 - yandevelop: [https://twitter.com/yandevelop](https://twitter.com/yandevelop)
 - YourRepo: [https://twitter.com/yourepo](https://twitter.com/yourepo)
+- And ***you***, the community, for giving insightful feedback and support.
